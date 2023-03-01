@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc7da5c2-6985-4858-8637-b75b0eb2d980" name="Changes" comment="ClassLoader + Introspection">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSV/credits.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SimulateurDeCredit.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lombok-1.18.26.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/DAO/IDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/DAO/dbVolatile/CreditDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/Metier/CreditMetier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/Metier/ICreditMetier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/Modele/Credit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/Presentation/CreditControleur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/Presentation/ICreditControleur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/SimulateurDeCredit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ma/lyCreditSimul/config.properties" afterDir="false" />
-    </list>
+    <list default="true" id="dc7da5c2-6985-4858-8637-b75b0eb2d980" name="Changes" comment="ClassLoader + Introspection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,8 +72,16 @@
       <workItem from="1677677196007" duration="1332000" />
       <workItem from="1677678983349" duration="520000" />
       <workItem from="1677679537791" duration="2142000" />
-      <workItem from="1677681736263" duration="5169000" />
+      <workItem from="1677681736263" duration="8882000" />
     </task>
+    <task id="LOCAL-00001" summary="ClassLoader + Introspection">
+      <created>1677709525795</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677709525795</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
