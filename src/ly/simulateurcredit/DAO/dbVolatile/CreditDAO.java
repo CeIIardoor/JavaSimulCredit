@@ -1,9 +1,8 @@
-package ma.lyCreditSimul.DAO.dbVolatile;
+package ly.simulateurcredit.DAO.dbVolatile;
 
 
-import ma.lyCreditSimul.DAO.IDAO;
-import ma.lyCreditSimul.Modele.Credit;
-import org.w3c.dom.ls.LSOutput;
+import ly.simulateurcredit.Modele.Credit;
+import ly.simulateurcredit.DAO.IDAO;
 
 import java.util.Set;
 

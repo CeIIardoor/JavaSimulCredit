@@ -1,7 +1,8 @@
-package ma.lyCreditSimul.Presentation;
+package ly.simulateurcredit.Presentation;
 
 import lombok.Data;
-import ma.lyCreditSimul.Metier.ICreditMetier;
+import ly.simulateurcredit.Metier.ICreditMetier;
+
 @Data
 public class CreditControleur implements ICreditControleur {
 

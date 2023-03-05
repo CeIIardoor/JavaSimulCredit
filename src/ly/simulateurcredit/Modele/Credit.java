@@ -1,4 +1,4 @@
-package ma.lyCreditSimul.Modele;
+package ly.simulateurcredit.Modele;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,8 +1,9 @@
-package ma.lyCreditSimul.Metier;
+package ly.simulateurcredit.Metier;
 
 import lombok.Data;
-import ma.lyCreditSimul.DAO.IDAO;
-import ma.lyCreditSimul.Modele.Credit;
+import ly.simulateurcredit.Modele.Credit;
+import ly.simulateurcredit.DAO.IDAO;
+
 @Data
 public class CreditMetier implements ICreditMetier {
 
@@ -19,5 +20,10 @@ public class CreditMetier implements ICreditMetier {
             throw new Exception("Credit introuvable");
         }
         return credit;
+    }
+
+    @Override
+    public void afficherCredit(long idCredit) {
+        Credit credit = creditDao.trouverParId(idCredit);
     }
 }
