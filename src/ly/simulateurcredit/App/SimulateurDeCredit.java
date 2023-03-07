@@ -1,5 +1,7 @@
-package ly.simulateurcredit;
+package ly.simulateurcredit.App;
 
+import ly.simulateurcredit.Controleur.ICreditControleur;
+import ly.simulateurcredit.Metier.CreditMetier;
 import ly.simulateurcredit.Metier.ICreditMetier;
 import ly.simulateurcredit.Modele.Credit;
 import ly.simulateurcredit.DAO.IDAO;
@@ -7,6 +9,8 @@ import ly.simulateurcredit.DAO.IDAO;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class SimulateurDeCredit {
@@ -14,9 +18,11 @@ public class SimulateurDeCredit {
         String daoClassName = null, metierClassName = null, controleurClassName = null;
         Properties properties = new Properties();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        InputStream propertiesFile = classLoader.getResourceAsStream("config.properties");
+        InputStream propertiesFile = classLoader.getResourceAsStream("ly/simulateurcredit/config.properties");
 
-        if (propertiesFile != null) {
+        if (propertiesFile == null) {
+            System.out.println("Fichier de configuration introuvable");
+        } else {
             try {
                 properties.load(propertiesFile);
                 daoClassName = properties.getProperty("DAO");
@@ -26,6 +32,8 @@ public class SimulateurDeCredit {
             } catch (Exception e) {
                 System.out.println("Erreur de chargement du fichier de configuration");
                 e.printStackTrace();
+            } finally {
+                properties.clear();
             }
 
             try {
@@ -34,8 +42,8 @@ public class SimulateurDeCredit {
                 Class<?> controleurClass = Class.forName(controleurClassName);
 
                 IDAO<Credit,Long> dao = (IDAO<Credit, Long>) daoClass.getDeclaredConstructor().newInstance();
-                ICreditMetier metier = (ICreditMetier) metierClass.getDeclaredConstructor(daoClass).newInstance(dao);
-                ICreditMetier creditControleur = (ICreditMetier) controleurClass.getDeclaredConstructor(metierClass).newInstance(metier);
+                ICreditMetier metier = (ICreditMetier) metierClass.getDeclaredConstructor(IDAO.class).newInstance(dao);
+                ICreditControleur creditControleur = (ICreditControleur) controleurClass.getDeclaredConstructor(ICreditMetier.class).newInstance(metier);
 
                 Method setDao = metierClass.getMethod("setCreditDao", IDAO.class);
                 setDao.invoke(metier, dao);
@@ -43,23 +51,14 @@ public class SimulateurDeCredit {
                 Method setMetier = controleurClass.getMethod("setCreditMetier", ICreditMetier.class);
                 setMetier.invoke(creditControleur, metier);
 
-                System.out.println("dao = " + dao.toString());
-                System.out.println("metier = " + metier);
-                System.out.println("creditControleur = " + creditControleur);
-
                 creditControleur.afficherCredit(1L);
+                creditControleur.afficherMensualite(1L);
+                creditControleur.afficherMensualite(2L);
+                creditControleur.afficherMensualite(3L);
 
-
-            } catch (ClassNotFoundException | InvocationTargetException | InstantiationException |
-                     IllegalAccessException | NoSuchMethodException e) {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-        } else {
-            System.out.println("Fichier de configuration introuvable");
         }
-
-
-
-
     }
 }

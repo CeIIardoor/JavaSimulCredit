@@ -8,22 +8,26 @@ import ly.simulateurcredit.DAO.IDAO;
 public class CreditMetier implements ICreditMetier {
 
     IDAO<Credit,Long> creditDao;
+
+    public CreditMetier(IDAO<Credit,Long> creditDao) {
+        this.creditDao = creditDao;
+    }
+
     @Override
-    public Credit calculerMensualite(Long idCredit) throws Exception {
-        System.out.println("CreditMetier.calculerMensualite()");
+    public Credit calculerMensualite(Long idCredit) {
         Credit credit = creditDao.trouverParId(idCredit);
         if (credit != null) {
             double mensualite = credit.getCapitale_emprunte() * (credit.getTaux_interet() / 1200)
                     / (1 - Math.pow(1 + credit.getTaux_interet() / 100, -1 * credit.getNbr_mois()));
             credit.setMensualite(Math.round(mensualite * 100.0) / 100.0);
         } else {
-            throw new Exception("Credit introuvable");
+            System.out.println("Credit introuvable");
         }
         return credit;
     }
 
     @Override
-    public void afficherCredit(long idCredit) {
-        Credit credit = creditDao.trouverParId(idCredit);
+    public void afficherCredit(Long idCredit) {
+        System.out.println(creditDao.trouverParId(idCredit));
     }
 }

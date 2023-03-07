@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SimulateurDeCredit.iml" filepath="$PROJECT_DIR$/SimulateurDeCredit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaSimulCredit.iml" filepath="$PROJECT_DIR$/JavaSimulCredit.iml" />
     </modules>
   </component>
 </project>

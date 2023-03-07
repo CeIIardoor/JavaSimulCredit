@@ -3,7 +3,7 @@ package ly.simulateurcredit.Metier;
 import ly.simulateurcredit.Modele.Credit;
 
 public interface ICreditMetier {
-    public Credit calculerMensualite(Long idCredit) throws Exception;
+    public Credit calculerMensualite(Long idCredit);
 
-    void afficherCredit(long l);
+    void afficherCredit(Long l);
 }
