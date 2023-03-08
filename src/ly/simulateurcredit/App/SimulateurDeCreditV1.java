@@ -8,7 +8,6 @@ import ly.simulateurcredit.Metier.ICreditMetier;
 import ly.simulateurcredit.Modele.Credit;
 
 public class SimulateurDeCreditV1 {
-
         public static void main(String[] args) {
             IDAO<Credit, Long> creditDao = new CreditDAO();
             ICreditMetier creditMetier = new CreditMetier(creditDao);
