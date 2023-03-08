@@ -1,19 +1,16 @@
 package ly.simulateurcredit.App;
 
 import ly.simulateurcredit.Controleur.ICreditControleur;
-import ly.simulateurcredit.Metier.CreditMetier;
+import ly.simulateurcredit.DAO.dbVolatile.CreditDAO;
 import ly.simulateurcredit.Metier.ICreditMetier;
 import ly.simulateurcredit.Modele.Credit;
 import ly.simulateurcredit.DAO.IDAO;
 
 import java.io.InputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
 
-public class SimulateurDeCredit {
+public class SimulateurDeCreditV2 {
     public static void main(String[] args) {
         String daoClassName = null, metierClassName = null, controleurClassName = null;
         Properties properties = new Properties();
@@ -41,12 +38,13 @@ public class SimulateurDeCredit {
                 Class<?> metierClass = Class.forName(metierClassName);
                 Class<?> controleurClass = Class.forName(controleurClassName);
 
-                IDAO<Credit,Long> dao = (IDAO<Credit, Long>) daoClass.getDeclaredConstructor().newInstance();
+                IDAO<Credit,Long> dao = (CreditDAO) daoClass.getDeclaredConstructor().newInstance();
                 ICreditMetier metier = (ICreditMetier) metierClass.getDeclaredConstructor(IDAO.class).newInstance(dao);
                 ICreditControleur creditControleur = (ICreditControleur) controleurClass.getDeclaredConstructor(ICreditMetier.class).newInstance(metier);
 
-                Method setDao = metierClass.getMethod("setCreditDao", IDAO.class);
-                setDao.invoke(metier, dao);
+                //                Dependency injection using setter
+//                Method setDao = metierClass.getMethod("setCreditDao", IDAO.class);
+//                setDao.invoke(metier, dao);
 
                 Method setMetier = controleurClass.getMethod("setCreditMetier", ICreditMetier.class);
                 setMetier.invoke(creditControleur, metier);
