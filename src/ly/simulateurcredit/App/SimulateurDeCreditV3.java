@@ -10,7 +10,8 @@ public class SimulateurDeCreditV3 {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("ly/simulateurcredit/spring-ioc.xml");
-        creditControleur = (ICreditControleur) context.getBean("controleur");
+//        creditControleur = (ICreditControleur) context.getBean("controleur");
+        creditControleur = context.getBean(ICreditControleur.class);
         creditControleur.afficherMensualite(1L);
     }
 
