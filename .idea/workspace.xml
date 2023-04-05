@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc7da5c2-6985-4858-8637-b75b0eb2d980" name="Changes" comment="v1">
+      <change afterPath="$PROJECT_DIR$/src/ly/simulateurcredit/DAO/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ly/simulateurcredit/DAO/dbMySQL/TestJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ly/simulateurcredit/spring-ioc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ly/simulateurcredit/spring-ioc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,20 +50,27 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Yassine/Desktop/Repositories/JavaSimulCredit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.externalResources",
+    "settings.editor.selected.configurable": "settings.sync",
     "spring.configuration.checksum": "7dfe912f4e6e1b3f07b2fe9decf92dbd",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.SimulateurDeCreditV3">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yassine\Desktop\Repositories\JavaSimulCredit\src\ly\simulateurcredit\DAO" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TestJDBC">
     <configuration name="SimulateurDeCreditV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ly.simulateurcredit.App.SimulateurDeCreditV1" />
       <module name="JavaSimulCredit" />
@@ -99,8 +110,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestJDBC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ly.simulateurcredit.DAO.dbMySQL.TestJDBC" />
+      <module name="JavaSimulCredit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ly.simulateurcredit.DAO.dbMySQL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestJDBC" />
         <item itemvalue="Application.SimulateurDeCreditV3" />
         <item itemvalue="Application.SimulateurDeCreditV2" />
         <item itemvalue="Application.SimulateurDeCreditV1" />
@@ -128,6 +153,10 @@
       <workItem from="1678262681436" duration="1601000" />
       <workItem from="1678264328815" duration="1677000" />
       <workItem from="1678275681792" duration="5001000" />
+      <workItem from="1678706300374" duration="110000" />
+      <workItem from="1678706451880" duration="71000" />
+      <workItem from="1678886313961" duration="2746000" />
+      <workItem from="1680703816311" duration="641000" />
     </task>
     <task id="LOCAL-00001" summary="ClassLoader + Introspection">
       <created>1677709525795</created>
